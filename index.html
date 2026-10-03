@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Salin is a small Filipino word companion for learning and keeping meaningful words.">
+  <title>Salin | Filipino Word Companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Salin home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Salin</span>
+    </a>
+
+    <nav aria-label="Page navigation">
+      <a href="#word-of-the-day">Word of the day</a>
+      <a href="#word-list">Words</a>
+      <a href="#saved-words">Saved</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <p class="eyebrow">Filipino word companion</p>
+      <h1 id="page-title">Words are little places to return to.</h1>
+      <p>
+        Discover Filipino words, learn how they are used, and keep the ones you
+        want to carry with you.
+      </p>
+    </section>
+
+    <section class="search-section" aria-label="Search Filipino words">
+      <label for="search-input">Search by Filipino word or English meaning</label>
+      <div class="search-row">
+        <input id="search-input" type="search" placeholder="Try: joy, tahanan, hiwaga">
+        <button id="clear-search" type="button">Clear</button>
+      </div>
+
+      <div class="filter-row" aria-label="Word categories">
+        <button class="filter-button is-active" type="button" data-category="all">All words</button>
+        <button class="filter-button" type="button" data-category="emotion">Emotion</button>
+        <button class="filter-button" type="button" data-category="nature">Nature</button>
+        <button class="filter-button" type="button" data-category="everyday">Everyday</button>
+        <button class="filter-button" type="button" data-category="values">Values</button>
+      </div>
+    </section>
+
+    <section class="word-of-the-day" id="word-of-the-day" aria-labelledby="word-of-the-day-title">
+      <div class="day-label">
+        <span aria-hidden="true">✦</span>
+        <p>Word of the day</p>
+      </div>
+
+      <article class="day-card" id="day-card"></article>
+    </section>
+
+    <section class="words-section" id="word-list" aria-labelledby="words-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Browse words</p>
+          <h2 id="words-title">Small words, big meanings.</h2>
+        </div>
+        <p id="result-count" aria-live="polite"></p>
+      </div>
+
+      <div class="word-grid" id="word-grid" aria-live="polite"></div>
+
+      <p class="no-results" id="no-results" hidden>
+        No word matched that search yet. Try another Filipino word or English meaning.
+      </p>
+    </section>
+
+    <section class="saved-section" id="saved-words" aria-labelledby="saved-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Words worth keeping</p>
+          <h2 id="saved-title">Your saved words.</h2>
+        </div>
+      </div>
+
+      <div class="saved-list" id="saved-list" aria-live="polite"></div>
+      <p class="saved-empty" id="saved-empty">Save a word you want to remember. It will appear here.</p>
+    </section>
+
+    <section class="source-note">
+      <p>
+        This is a learning project with a small starter glossary. For detailed and formal definitions, use the
+        <a href="https://kwfdiksiyonaryo.ph/" target="_blank" rel="noopener">KWF Diksiyonaryo ng Wikang Filipino</a>.
+      </p>
+    </section>
+  </main>
+
+  <template id="word-card-template">
+    <article class="word-card">
+      <div class="word-card-top">
+        <p class="category"></p>
+        <button class="save-button" type="button" aria-label="Save word"></button>
+      </div>
+      <h3 class="word"></h3>
+      <p class="pronunciation"></p>
+      <p class="meaning"></p>
+      <p class="example-label">In a sentence</p>
+      <p class="example"></p>
+      <div class="related"></div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
